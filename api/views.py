@@ -40,7 +40,7 @@ class DaftarAccount(views.APIView):
                 daftarPembeli.save()
                 return Response(status=status.HTTP_201_CREATED)
             else:
-                return Response('user created, BUT'+daftarPembeli.errors,status=status.HTTP_406_NOT_ACCEPTABLE)
+                return Response({'detail':'user created, BUT'+daftarPembeli.errors},status=status.HTTP_406_NOT_ACCEPTABLE)
         except Exception as e:
             return Response(str(e),status=status.HTTP_406_NOT_ACCEPTABLE)
 
@@ -57,6 +57,7 @@ class DaftarPenjual(views.APIView):
         try:
             if penjual.is_valid():
                 penjual.save()
+                print(penjual.validated_data)
                 return Response(status=status.HTTP_201_CREATED)
             else :
                 return Response(penjual.errors,status=status.HTTP_406_NOT_ACCEPTABLE)
@@ -75,7 +76,7 @@ class LoginSeller(views.APIView):
                 return Response(data,status=status.HTTP_200_OK)
             except Exception as e:
                 data['messages']="anda belum terdaftar di promo"
-                return Response(data,status=status.HTTP_401_UNAUTHORIZED)
+                return Response(data,status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail':'not registered as a seller'},status=status.HTTP_401_UNAUTHORIZED)
  

@@ -1,0 +1,22 @@
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:8000
+DEBUG:urllib3.connectionpool:http://127.0.0.1:8000 "GET /api/penjual/ HTTP/1.1" 200 287
+INFO:root:test all product
+INFO:root:test PASS, can see all product
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:8000
+DEBUG:urllib3.connectionpool:http://127.0.0.1:8000 "POST /api/daftar/account/ HTTP/1.1" 201 0
+INFO:root:test PASS, can register account
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:8000
+DEBUG:urllib3.connectionpool:http://127.0.0.1:8000 "POST /api/login/ HTTP/1.1" 200 486
+INFO:root:test login
+INFO:root:test PASS
+INFO:root:Got a token
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:8000
+DEBUG:urllib3.connectionpool:http://127.0.0.1:8000 "POST /api/daftar/penjual/ HTTP/1.1" 201 0
+INFO:root:test PASS, membuat akun seller
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:8000
+DEBUG:urllib3.connectionpool:http://127.0.0.1:8000 "POST /api/seller/ HTTP/1.1" 200 102
+INFO:root:test PASS, access seller account
+INFO:root:{"name":"akun15","email":"akun15@akun.com","account_id":43,"messages":"anda belum terdaftar di promo"}
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 127.0.0.1:8000
+DEBUG:urllib3.connectionpool:http://127.0.0.1:8000 "POST /api/daftar/product/ HTTP/1.1" 200 44
+INFO:root:test PASS, Register Product
