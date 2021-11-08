@@ -2,9 +2,9 @@ import requests,logging
 
 logging.basicConfig(filename='test.log', encoding='utf-8', level=logging.DEBUG)
 
-username="akun15"
-password="Akun15"
-email="akun15@akun.com"
+username="akun16"
+password="Akun16"
+email="akun16@akun.com"
 
 r = requests.get('http://127.0.0.1:8000/api/penjual/')
 logging.info('test all product')
@@ -55,6 +55,7 @@ files={'image':open('test.jpg','rb')}
 r = requests.post('http://127.0.0.1:8000/api/daftar/product/',headers={'Authorization':'Bearer '+token},data={'name':'product2','price':'3000'},files=files)
 if r.status_code == 200:
     logging.info('test PASS, Register Product')
+    logging.info(r.text)
 else:
     logging.error(r.status_code)
     logging.error(r.text)
